@@ -26,5 +26,5 @@ export default {
     },
   },
   presets: [createPreset({})],
-  plugins: [tailwindCSSShorthand(), skelUITailwind()],
+  plugins: [tailwindCSSShorthand(), skelUITailwind],
 };
