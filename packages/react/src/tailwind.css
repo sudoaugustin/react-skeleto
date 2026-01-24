@@ -1,6 +1,0 @@
-@custom-variant loaded (&[data-loading="false"]);
-@custom-variant loading (&[data-loading="true"]);
-@custom-variant peer-loaded (:merge(.peer)[data-loading="false"] ~ &);
-@custom-variant peer-loading (:merge(.peer)[data-loading="true"] ~ &);
-@custom-variant group-loaded (:merge(.group)[data-loading="false"] &);
-@custom-variant group-loading (:merge(.group)[data-loading="true"] &);

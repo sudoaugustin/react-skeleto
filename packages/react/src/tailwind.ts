@@ -1,15 +1,14 @@
-import plugin from "tailwindcss/plugin";
+import type { PluginAPI } from "tailwindcss/types/config";
 
-export default function tailwindcssPlugin() {
+export default function skelPlugin({ addVariant }: PluginAPI) {
   const variants = [
     { name: "loaded", value: false },
     { name: "loading", value: true },
-  ];
-  return plugin(({ addVariant }) => {
-    variants.forEach(({ name, value }) => {
-      addVariant(name, `&[data-loading='${value}']`);
-      addVariant(`peer-${name}`, `:merge(.peer)[data-loading='${value}'] ~ &`);
-      addVariant(`group-${name}`, `:merge(.group)[data-loading='${value}'] &`);
-    });
+  ] as const;
+
+  variants.forEach(({ name, value }) => {
+    addVariant(name, `&[data-loading='${value}']`);
+    addVariant(`peer-${name}`, `:merge(.peer)[data-loading='${value}'] ~ &`);
+    addVariant(`group-${name}`, `:merge(.group)[data-loading='${value}'] &`);
   });
 }
