@@ -1,21 +1,33 @@
 ---
 title: Tailwind CSS
-description: Skel UI provides first-class support for Tailwind CSS through a custom plugin.
+description: Skel UI provides first-class support for Tailwind CSS through custom variants.
 ---
 
 ## Import plugin
 
-Add Skel UI plugin to the plugins array of your tailwind config file.
+<Tabs items={["Tailwind v4", "Tailwind v3"]}>
+  <Tab value="Tailwind v4">
+    Import the Skel UI plugin in your main CSS file.
 
-```js title="tailwind.config.js"
-/** @type {import('tailwindcss').Config} */
+    ```css title="app.css"
+    @import "tailwindcss";
+    @import "@skel-ui/react/tailwind.css"; /* [!code highlight] */
+    ```
+  </Tab>
+  <Tab value="Tailwind v3">
+    Add Skel UI plugin to the plugins array of your tailwind config file.
 
-module.exports = {
-  plugins: [
-    require("@skel-ui/react/tailwind")(), // [!code highlight]
-  ],
-};
-```
+    ```js title="tailwind.config.js"
+    /** @type {import('tailwindcss').Config} */
+
+    module.exports = {
+      plugins: [
+        require("@skel-ui/react/tailwind")(), // [!code highlight]
+      ],
+    };
+    ```
+  </Tab>
+</Tabs>
 
 ## Variants
 
