@@ -1,7 +1,7 @@
 {
   "name": "@skel-ui/core",
   "author": "https://github.com/sudoaugustin",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "license": "MIT",
   "description": "Interal package for @skel-ui/react and @skel-ui/react-native",
   "files": ["dist"],
