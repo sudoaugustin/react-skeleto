@@ -25,6 +25,7 @@
       "import": "./dist/esm/tailwind.js",
       "require": "./dist/cjs/tailwind.js"
     },
+    "./tailwind.css": "./dist/tailwind.css",
     "./styles.css": "./dist/styles.css",
     "./$components": "./stories/components/index.tsx"
   },

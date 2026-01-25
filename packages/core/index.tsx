@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, createContext, ElementType, ReactNode } from "react";
+import { ComponentPropsWithoutRef, ElementType, ReactNode, createContext } from "react";
 
 type TValue = number | string;
 
@@ -14,8 +14,12 @@ export function SkelRoot({ children, isLoading = true }: { children: ReactNode; 
   return <IsLoadingContext.Provider value={isLoading}>{children}</IsLoadingContext.Provider>;
 }
 
-export function generatePlaceholder<T>(length: number, primary: string) {
+type Placeholder<T, K extends keyof T> = {
+  [P in keyof T]: P extends K ? string : null;
+};
+
+export function generatePlaceholder<T, K extends keyof T>(length: number, primary: K): Placeholder<T, K>[] {
   return Array(length)
     .fill(null)
-    .map((_, index) => ({ [primary]: `${primary}-${index}` }) as T);
+    .map((_, index) => ({ [primary]: `${String(primary)}-${index}` }) as Placeholder<T, K>);
 }
